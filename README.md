@@ -84,7 +84,8 @@ Technical Art, 3D Modeling & Texturing, and Unity Development
 - **GestureTurning.cs**: Turns player based on lateral offset of controllers.
 
 #### Hand Sprite System
-![Hand Sprite System](assets/hand_sprite_demo.png)
+![Hand Sprite System](assets/Hand_Rotation_Manager_Right.png)
+![Hand Sprite System](assets/Right_Hand_Model_Prefab.png)
 ![Hand Sprite Switching](assets/Hand_Sprite_Switcher_GIF.gif)
 - **HandRotationManager.cs**: Changes hand sprites based on controller Z-axis.
 - Uses **IgnoreParentZRollLook.cs** to ignore roll rotation from the parent XR controller, ensuring consistent sprite orientation.
