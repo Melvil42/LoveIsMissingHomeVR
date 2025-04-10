@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4953630053945487858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4560417091984238333}
+  - component: {fileID: 8094218252673512754}
+  m_Layer: 0
+  m_Name: HandRotationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4560417091984238333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4953630053945487858}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.19596803, y: 1.1435809, z: -1.016878}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8094218252673512754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4953630053945487858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdb92f2da74de4b4d909e72c80d76835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand:
+    trackedHand: {fileID: 0}
+    spriteRenderer: {fileID: 0}
+    sprites:
+    - {fileID: 21300000, guid: 89daba5002b582e48bd0282f40c7fa95, type: 3}
+    - {fileID: 21300000, guid: 24d9a716c93f7094fa0902d99074f8a9, type: 3}
+    - {fileID: 21300000, guid: 6bf2c8cb3a185624a9c41020b1ba39c9, type: 3}
+    - {fileID: 21300000, guid: 489e12003b3610248b306012bfbf3ffd, type: 3}
+    - {fileID: 21300000, guid: bdeb17a660b6b344aa63e31b0b0ef895, type: 3}
+    - {fileID: 21300000, guid: ecf5729d924da9947ab96789aa5c8929, type: 3}
+    - {fileID: 21300000, guid: 03ed08a9d12ba9a47b4558670954fd2f, type: 3}
+    - {fileID: 21300000, guid: 2a3b4dbf3f86c35408d6d3269c489e71, type: 3}
+    - {fileID: 21300000, guid: 23db8ce7673a1174ba27951f6881edc2, type: 3}
+    - {fileID: 21300000, guid: 1e021c1161ea9684495c64db703e1ef7, type: 3}
+    - {fileID: 21300000, guid: 62dfdfd7e76eb9f42a58bcdb999aa29e, type: 3}
+    - {fileID: 21300000, guid: 8559dfb7d4e532d4fb5f7a8fd4700c4c, type: 3}
+    - {fileID: 21300000, guid: dbbc03e1dc7c67d439d6f940372578ee, type: 3}
+    - {fileID: 21300000, guid: feeae284618b81349896ff4f371d2475, type: 3}
+    - {fileID: 21300000, guid: 6e019d6cb7c438f43a285ad089ba69a6, type: 3}
+    - {fileID: 21300000, guid: 532eb9e32f27c1e4c8a4ee3a681b6747, type: 3}
+    - {fileID: 21300000, guid: d3ee1aebe9989114f9d4a4adc1a17ff5, type: 3}
+    - {fileID: 21300000, guid: 15a82a69eefd8d849a3d0ba4e8130bb1, type: 3}
+    - {fileID: 21300000, guid: d94c72f415e62f14c86725b98653b9f9, type: 3}
+    zAngleThreshold: 10
+    baseAngleOffset: 0
+    baseSpriteIndex: 5
+    invertRotationDifference: 0
+    smoothedAngle: 0
+    currentSpriteIndex: -1
+  rightHand:
+    trackedHand: {fileID: 0}
+    spriteRenderer: {fileID: 0}
+    sprites:
+    - {fileID: 21300000, guid: 1b9e13a52627c4a4abdf76571815ec7e, type: 3}
+    - {fileID: 21300000, guid: cd6c2e646320dd44a9af6dad00fb1a3f, type: 3}
+    - {fileID: 21300000, guid: a9686c082d3591842b8d45a7c821e399, type: 3}
+    - {fileID: 21300000, guid: 5fa6f26cc61340a418cb606a31deb108, type: 3}
+    - {fileID: 21300000, guid: 03dcb34f151799b4b853322eb44c5e5e, type: 3}
+    - {fileID: 21300000, guid: 9c809a26cb3273d4bb558cdb2c499556, type: 3}
+    - {fileID: 21300000, guid: 4a852c76e07a4c049b8f3ec14760870f, type: 3}
+    - {fileID: 21300000, guid: fdf6b76413f4ca8408b37c9266100c92, type: 3}
+    - {fileID: 21300000, guid: 40bea871b87e8c043a7cc804f39ffc0a, type: 3}
+    - {fileID: 21300000, guid: 9ff0a153cd9652c40890d082ea7b6042, type: 3}
+    - {fileID: 21300000, guid: 1c1c2e7d06639e24f95db6c01727a9c0, type: 3}
+    - {fileID: 21300000, guid: 94ff8b74f7c40a0469da4fa751d9a9f9, type: 3}
+    - {fileID: 21300000, guid: 90ff859ad45437449a5c29e1fd78a5ad, type: 3}
+    - {fileID: 21300000, guid: 2e9745df84c8afd4aba00045086eff98, type: 3}
+    - {fileID: 21300000, guid: 553656f02c1820149b8146e300266440, type: 3}
+    - {fileID: 21300000, guid: 88fb2842c42c7d148bec5fde0a126f55, type: 3}
+    - {fileID: 21300000, guid: 3fd2ea57ed83ff9428d66fe3af921f7a, type: 3}
+    - {fileID: 21300000, guid: 83909ae6029d2c14a83965a82be7155c, type: 3}
+    - {fileID: 21300000, guid: bdb11121f0347f54996a86f306e146d5, type: 3}
+    zAngleThreshold: 10
+    baseAngleOffset: 0
+    baseSpriteIndex: 5
+    invertRotationDifference: 1
+    smoothedAngle: 0
+    currentSpriteIndex: -1
+  smoothingSpeed: 17
