@@ -9,7 +9,8 @@ public class EnterStageTrigger : MonoBehaviour
 {
     [SerializeField]
     public UnityEvent playerEnteredStage;
-
+    
+    // Called when another collider enters the trigger
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

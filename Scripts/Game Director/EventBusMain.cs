@@ -2,11 +2,9 @@ using System;
 
 public static class EventBusMain
 {
-    // Global events that any system can subscribe to:
+    // Global event for signaling when a scene is complete
     public static event Action OnSceneComplete;
-   
 
-    // Helper methods to invoke events:
+    // Method to invoke the scene complete event
     public static void SceneComplete() => OnSceneComplete?.Invoke();
- 
 }

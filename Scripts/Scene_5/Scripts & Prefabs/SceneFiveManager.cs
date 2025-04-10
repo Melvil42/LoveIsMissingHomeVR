@@ -7,31 +7,28 @@ using UnityEngine.Events;
 public class SceneFiveManager : MonoBehaviour
 {
     public UnityEvent StartBathAnimation;
-    
+
+    // Signals that the scene is complete via the global event bus
     public void SceneFiveComplete()
     {
         EventBusMain.SceneComplete();
     }
 
-    void Awake()
+    private void Awake()
     {
-        // Start the coroutine to wait and then call the method.
         StartCoroutine(CallMethodAfterDelayCoroutine());
     }
 
-    IEnumerator CallMethodAfterDelayCoroutine()
+    // Waits for a delay, then invokes the bath animation event
+    private IEnumerator CallMethodAfterDelayCoroutine()
     {
-        // Wait for 3 seconds.
         yield return new WaitForSeconds(3f);
-    
-        // Now call the method.
         StartBathAnimation?.Invoke();
     }
 
-    void CallMethodAfterDelay()
+    // Placeholder method (unused)
+    private void CallMethodAfterDelay()
     {
         Debug.Log("Method called after delay");
     }
 }
-
-

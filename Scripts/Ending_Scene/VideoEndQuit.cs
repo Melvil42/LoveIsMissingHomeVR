@@ -7,7 +7,7 @@ public class VideoEndQuit : MonoBehaviour
 
     void Start()
     {
-        // Subscribe to the loopPointReached event
+        // Subscribe to the video end event
         videoPlayer.loopPointReached += OnVideoEnd;
     }
 
@@ -16,7 +16,7 @@ public class VideoEndQuit : MonoBehaviour
         Debug.Log("Video Finished! Quitting the application.");
         Application.Quit();
 
-        // For editor testing (this won't quit the editor but will stop play mode)
+        // Stop play mode in the Unity Editor
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif

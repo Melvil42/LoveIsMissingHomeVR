@@ -7,10 +7,11 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
+        // Ensure only one instance exists and persists across scenes
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // Persist across scene loads.
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -18,6 +19,7 @@ public class SceneController : MonoBehaviour
         }
     }
 
+    // Load a scene asynchronously by index
     public void LoadScene(int sceneIndex)
     {
         SceneManager.LoadSceneAsync(sceneIndex);

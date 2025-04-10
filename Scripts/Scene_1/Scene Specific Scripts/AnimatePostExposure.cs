@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal; // Change if using a different render pipeline
+using UnityEngine.Rendering.Universal;
 
 public class AnimatePostExposure : MonoBehaviour
 {
@@ -15,7 +15,6 @@ public class AnimatePostExposure : MonoBehaviour
     [Tooltip("Total duration of the animation in seconds.")]
     public float animationDuration = 2f;
 
-    // The target weight value to animate to.
     [Tooltip("Target weight value (for example, 0 to fade out).")]
     public float targetWeight = 0f;
 
@@ -32,30 +31,31 @@ public class AnimatePostExposure : MonoBehaviour
         StartCoroutine(AnimateWeight());
     }
 
+    // Destroys this GameObject when a trigger exit occurs
     public void OnTriggerExit(Collider other)
     {
         Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Animates the volume's weight value from its current state to the target weight
+    /// over the specified animation duration using the provided curve.
+    /// </summary>
     private IEnumerator AnimateWeight()
     {
         float elapsedTime = 0f;
-        // Capture the current weight value (assumed to be already set, e.g., 1).
         float initialWeight = volume.weight;
 
         while (elapsedTime < animationDuration)
         {
-            // Calculate normalized time [0, 1].
             float normalizedTime = elapsedTime / animationDuration;
-            // Evaluate the curve to get the interpolation factor.
             float t = weightCurve.Evaluate(normalizedTime);
-            // Interpolate the weight from the initial value to the target weight.
             volume.weight = Mathf.Lerp(initialWeight, targetWeight, t);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        // Ensure the final weight is exactly the target value.
+
         volume.weight = targetWeight;
     }
 }

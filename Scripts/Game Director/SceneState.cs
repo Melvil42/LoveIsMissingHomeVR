@@ -7,7 +7,6 @@ public enum SceneState
     SceneTwo,
     SceneThree,
     SceneFour,
-    // Add additional states/scenes as needed.
 }
 
 public class Director : MonoBehaviour
@@ -17,10 +16,11 @@ public class Director : MonoBehaviour
 
     private void Awake()
     {
+        // Ensure only one instance exists and persists across scenes
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Persist across scene loads.
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -28,9 +28,9 @@ public class Director : MonoBehaviour
         }
     }
 
-    // Check the active scene and update the state accordingly.
     private void Start()
     {
+        // Set current state based on the active scene
         Scene activeScene = SceneManager.GetActiveScene();
         Debug.Log("Active scene: " + activeScene.name);
 
@@ -56,23 +56,24 @@ public class Director : MonoBehaviour
 
     private void OnEnable()
     {
-        // Listen to scene-completion events.
+        // Subscribe to scene-completion event
         EventBusMain.OnSceneComplete += HandleSceneComplete;
     }
 
     private void OnDisable()
     {
+        // Unsubscribe to prevent memory leaks
         EventBusMain.OnSceneComplete -= HandleSceneComplete;
     }
 
     private void HandleSceneComplete()
     {
-        // Decide what to do when a scene is complete.
+        // Advance to the next scene based on the current state
         switch (CurrentState)
         {
             case SceneState.SceneOne:
                 CurrentState = SceneState.SceneTwo;
-                SceneController.instance.LoadScene(1); // Use your actual scene name.
+                SceneController.instance.LoadScene(1);
                 break;
             case SceneState.SceneTwo:
                 CurrentState = SceneState.SceneThree;

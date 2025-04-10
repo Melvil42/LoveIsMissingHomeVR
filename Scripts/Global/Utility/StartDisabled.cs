@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class StartDisabled : MonoBehaviour
 {
-    [Tooltip("Should this GameObject be disabled when the scene starts?")]
+    [Tooltip("Disables this GameObject on scene start if enabled.")]
     public bool disableOnStart = true;
 
     private void Awake()
@@ -13,17 +13,13 @@ public class StartDisabled : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Disables this GameObject. Can be called externally.
-    /// </summary>
+    // Disables this GameObject
     public void DisableGameObject()
     {
         gameObject.SetActive(false);
     }
 
-    /// <summary>
-    /// Enables this GameObject. Can be called externally.
-    /// </summary>
+    // Enables this GameObject
     public void EnableGameObject()
     {
         gameObject.SetActive(true);

@@ -5,17 +5,14 @@ using UnityEngine;
 
 public class FogAnimationManager : MonoBehaviour
 {
-    [Header("References")] [SerializeField]
-    private LightControl lightControl;
-
+    [Header("References")]
+    [SerializeField] private DynamicLightControl lightControl;
     [SerializeField] private HeightFogGlobal heightFogGlobal;
-    
-    [Header("Control Parameters")] [SerializeField]
-    private float clampMin;
 
+    [Header("Control Parameters")]
+    [SerializeField] private float clampMin;
     [SerializeField] private float clampMax;
-    
-    
+
     void Awake()
     {
         if (heightFogGlobal != null)
@@ -30,27 +27,18 @@ public class FogAnimationManager : MonoBehaviour
 
     void Update()
     {
-        if (lightControl == null || heightFogGlobal== null) return;
+        if (lightControl == null || heightFogGlobal == null) return;
 
-        // LightProgress goes from 0 (dark) -> 1 (bright)
+        // Remap light progress and invert it for fog
         float t = MapAndClamp(lightControl.lightProgress, clampMin, clampMax, 0, 1);
-
-        // Now blend from night -> day
         heightFogGlobal.timeOfDay = 1 - t;
     }
-    
+
+    // Maps a value from one range to another, clamped to output range
     static float MapAndClamp(float value, float inMin, float inMax, float outMin, float outMax)
     {
-        // If value is below inMin, return outMin
         if (value <= inMin) return outMin;
-
-        // If value is above inMax, return outMax
         if (value >= inMax) return outMax;
-
-        // Map value linearly from the input range to the output range
         return Mathf.Lerp(outMin, outMax, Mathf.InverseLerp(inMin, inMax, value));
     }
-
-
-
 }
