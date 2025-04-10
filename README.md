@@ -87,6 +87,11 @@ Technical Art, 3D Modeling & Texturing, and Unity Development
 ![Hand Sprite System](assets/hand_sprite_demo.png)
 ![Hand Sprite Switching](assets/Hand_Sprite_Switcher_GIF.gif)
 - **HandRotationManager.cs**: Changes hand sprites based on controller Z-axis.
+- Uses **IgnoreParentZRollLook.cs** to ignore roll rotation from the parent XR controller, ensuring consistent sprite orientation.
+- Calculates smoothed local Z-axis rotation, then maps rotation difference to a sprite index in a sprite array, creating turntable-style 2.5D system.
+- Sprites are swapped based on defined angle thresholds, creating a directional visual feedback loop for hand gestures.
+
+---
 
 #### Chair Trigger
 ![Player Chair Lock Animation](assets/Player_Chair_Lock_Animation.png)
