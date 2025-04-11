@@ -37,9 +37,10 @@ Technical Art, 3D Modeling & Texturing, and Unity Development
   - Listens for global events via `EventBusMain.cs` (static event hub)
 
 - **Scene Managers**
-- ![Scene One Manager](assets/Scene_One_Manager.png)
-- ![Scene Five Manager](assets/Scene_Five_Manager.png)
-- ![Scene Five Manager](assets/Scene_Eight_Manager.png)
+
+![Scene One Manager](assets/Scene_One_Manager.png)
+![Scene Five Manager](assets/Scene_Five_Manager.png)
+![Scene Five Manager](assets/Scene_Eight_Manager.png)
   - Per-scene managers like `SceneOneManager`, `SceneFiveManager`
   - Raise UnityEvents to control flow (e.g. player enters trigger, animation completes)
 
